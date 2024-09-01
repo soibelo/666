@@ -1,0 +1,22 @@
+calls = 0
+def count_calls():
+
+  global calls
+  calls += 1
+
+def string_info(string):
+  
+  count_calls()
+  return len(string), string.upper(), string.lower()
+
+def is_contains(string, list_to_search):
+
+  count_calls()
+  return string.upper() in [item.upper() for item in list_to_search]
+
+print(string_info("Hello World!"))
+print(is_contains("UrbaN", ["URBAN", "CITY", "VILLAGE"]))
+print(string_info("Python"))
+print(is_contains("test", ["Test", "hello", "world"]))
+print(is_contains("TeSt", ["Test", "hello", "world"]))
+print(string_info("hello"))
